@@ -1,0 +1,60 @@
+[colors.bright]
+black   = "#663300"
+red     = "#ff7a93"
+green   = "#ff9966"
+yellow  = "#ff9e64"
+blue    = "#ffcc33"
+magenta = "#ff9966"
+cyan    = "#ffcc99"
+white   = "#b9f27c"
+
+[colors.normal]
+black   = "#330000"
+red     = "#f7768e"
+green   = "#ff6600"
+yellow  = "#ff9e64"
+blue    = "#ffcc00"
+magenta = "#ff6600"
+cyan    = "#ff9900"
+white   = "#b9f27c"
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#afb9da"
+
+[colors.cursor]
+text = "#3f3f21"
+cursor = "#ff6633"
+
+[font]
+size = 8.5
+
+[font.bold]
+family = "hack"
+style = "Bold"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
+
+[font.italic]
+family = "hack"
+style = "Italic"
+
+[font.normal]
+family = "hack"
+style = "Regular"
+
+
+[scrolling]
+history = 10000
+
+[window]
+opacity = 0.8
+
+[keyboard]
+bindings = [
+{ key = "Up", mods = "Control|Shift", action = "ScrollHalfPageUp" },
+{ key = "Down", mods = "Control|Shift", action = "ScrollHalfPageDown"},
+{ key = "F11", action="ToggleFullScreen"},
+]
