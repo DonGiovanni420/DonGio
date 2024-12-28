@@ -44,6 +44,8 @@ bind "set completion-ignore-case on"
 
 ### ALIASES
 
+alias stats='neofetch'
+alias vol='alsamixer'
 alias shot='flameshot gui'
 alias open-locked='sudo  gocryptfs locked unlocked'
 alias lapoff='xrandr --output eDP1 --off'
@@ -64,8 +66,9 @@ alias ulock='. ~/BASH/run/encrypt2.sh' #openssl
 alias combine='. ~/BASH/run/catcol.sh'
 
 # Python scripts
+alias percent='python /home/dongio/PYTHON/run/percent.py'
 alias secret='python /home/dongio/PYTHON/run/msgEncoder.py'
-
+alias snake='python /home/dongio/PYTHON/games/snake/snake.py'
 
 # list
 alias ls='ls --color=auto'
@@ -82,6 +85,12 @@ alias sprs='sudo pacman -Rs'		## Remove package and unused dependencies
 alias sprdd='sudo pacman -Rdd'      ## Remove package DON'T check for dependencies
 alias spqo='sudo pacman -Qo'        ## Query - what package owns a specific file
 alias spsii='sudo pacman -Sii'      ## Display detailed information about a package
+alias pacdate='expac --timefmt="%Y-%m-%d %T" "%l\t%n" | sort -h'
+alias pacsize='expac -H M "%m\t%n" | sort -h'
+alias bigfiles='sudo find / -size +100M'
+alias duall='df -h'
+alias dusize='du -sh /*'
+
 
 # Web Browsers
 alias lockchrome='sudo chmod -x /usr/bin/google-chrome-stable'

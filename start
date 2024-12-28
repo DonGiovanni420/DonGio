@@ -1,0 +1,124 @@
+________________________________________________________________________________________
+| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .|
+| * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  |
+|  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * . |
+| *  ________ * * * * * * * * * * * * *_* * * * * * * * * * * * * * * * * * * * _ * *  |
+|  * |  ___  \ * * * * * * * *____* * / \ * * * * * * * * * * * * * * * * * *  / \   * |
+| *  | |* *\  | * * * * * *  / __ \   \_/* * * * * * * * * * * * * * * * * * * \_/  * .|  
+|  * | | * *| |* * * _  __  | /  \ |* *_* * * * * * * * * * * * _ * *_* _ * *_* _  * * |
+| *  | |* * | |  __  ||/  \ ||   |_| *| |* __* *_* * _ * /\  * | \ *| || \ *| || |  * .|
+|  * | | * *| | /  \ |  _  |||   ___* | | /  \ | \  / | /  \  *|  \ | ||  \ | || |   * |
+| *  | |* * | || /\ || | | |||  |_ _| | || /\ |*\ \/ / / /\ \  | | \| || | \| || |  * .|
+|  * | |___/  || \/ || | | || \__/ / *| || \/ | *\  / / /--\ \ | |\   || |\   || |   * |
+| *  |_______/  \__/ |_| |_| \____/   |_| \__/ * *\/ /_/ * *\_\|_|*\__||_|*\__||_|  * .|  
+|  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * | 
+| * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * .|
+| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .|
+|______________________________________________________________________________________|
+##### --- GETTING AROUND qTile OS --- #####
+
+**If on windows style keyboard mod = Windows key
+**Mac mod = cmd key
+
+- [mod + 'd'] = Open application launcher 
+- [mod + 'q'] = Close current window
+- [mod + 'Enter/Return'] = Launch default terminal
+- [mod + #] = Switches to number workspace entered (you can also just click in top left)
+- [mod + 'j'] or [mod + 'k'] = Switch focus to other windows open in current workspace
+- [^^^^^^^^^^^^^^^^^^^^^^^^ + 'Shift] = Move location of current window
+
+
+
+
+
+
+
+
+
+#### --- ALIAS LIST --- ####
+
+## Getting Started / System Settings
+alias double='xrandr --output eDP1 --scale 0.5'     ## Make laptop good size
+alias lapoff='xrandr --output eDP1 --off'           ## Laptop screen off
+alias qtilex='cmd-obj -o cmd -f shutdown'
+alias stats='neofetch'                             ## Show neofetch PC stats
+alias vol='alsamixer'                              ## Opens Volume Control
+alias shot='flameshot gui'                         ## Take Screenshot selection with flameshot
+
+
+## Python
+alias pypy='python -m venv venv && virtualenv venv && source venv/bin/activate'  ## ALL IN ONE, MK VIRTUAL PY ENV AND LAUNCH	
+alias snake='python /home/dongio/PYTHON/games/snake/snake.py'
+alias secret='python /home/dongio/PYTHON/run/msgEncoder.py'
+alias percent='python /home/dongio/PYTHON/run/percent.py'
+
+
+## pacman
+alias updt='sudo pacman -Syy && sudo pacman -Syu' # Sync packages and update
+alias sps='sudo pacman -S'          ##  Sync pacman
+alias spr='sudo pacman -R'          ## Remove package
+alias sprs='sudo pacman -Rs'        ## Remove package and unused dependencies
+alias sprdd='sudo pacman -Rdd'      ## Remove package DON'T check for dependencies
+alias spqo='sudo pacman -Qo'        ## Query - what package owns a specific file
+alias spsii='sudo pacman -Sii'      ## Display detailed information about a package
+alias pacdate='expac --timefmt="%Y-%m-%d %T" "%l\t%n" | sort -h'
+alias pacsize='expac -H M "%m\t%n" | sort -h'
+alias bigfiles='sudo find / -size +100M'
+alias duall='df -h'
+alias dusize='du -sh /*'
+
+## Encryption
+alias lock='. ~/bash/encrypt.sh'             ## openssl
+alias ulock='. ~/bash/encrypt2.sh'           ## openssl
+alias open-locked='sudo gocrypts locked unlocked' ## gocrypts
+
+## Misc Programs
+alias signalfix='signal-desktop --password-store="gnome-libsecret"'
+
+## Browser Controls
+
+alias bambisleep='lockchrome && lockzen && lockwolf && lockweb && locktor'
+alias bambiwake='ulockchrome && ulockzen && ulockwolf && ulockweb && ulocktor'
+alias lockchrome='sudo chmod -x /usr/bin/google-chrome-stable'
+alias ulockchrome='sudo chmod +x /usr/bin/google-chrome-stable'
+alias lockzen='sudo chmod -x /usr/bin/zen-browser && sudo chmod -x /opt/zen-browser-bin/zen-bin'
+alias ulockzen='sudo chmod +x /usr/bin/zen-browser && sudo chmod +x /opt/zen-browser-bin/zen-bin'
+alias lockwolf='sudo chmod -x /usr/lib/librewolf'
+alias ulockwolf='sudo chmod +x /usr/lib/librewolf'
+alias lockweb='sudo chmod -x /usr/lib/webkitgtk-6.0/WebKitNetworkProcess'
+alias ulockweb='sudo chmod +x /usr/lib/webkitgtk-6.0/WebKitNetworkProcess'
+alias locktor='sudo chmod -x /usr/bin/torbrowser-launcher'
+alias ulocktor='sudo chmod +x /usr/bin/torbrowser-launcher'
+
+-----------------------------------------------------------------------------------
+
+#### --- IMPORTANT CLI COMMANDS TO REMEMBER --- ####
+
+## ONINE VIDEOS NOT PLAYING
+- systemctl --user restart pipewire wireplumber
+
+## LOGOUT OF QTILE
+- [cmd-obj -o cmd -f shutdown] console cmd to logout
+
+
+#### --- PERMISSION MANAGMENT --- ####	
+- [ls -l] to view current permissions of a directory
+- d : file type
+  - 1st : file cannot be read
+  - 2nd : file cannot be modified
+  - 3rd : file cannot be excecuted
+  r : read access
+  w : ability to modify
+  x : ability to excecute
+  s : setuid, also implies that x is set
+  S : same as s, however x is not set
+  t : sticky bit, can only be found in  
+
+## GoCryptFS Info
+
+ - to mount "gocryptfs /mnt/usb/locked /mnt/usb/unlocked"
+  - mount while giving users root "gocryptfs -allow_other /mnt/usb/locked /mnt/usb/unlocked"
+
+## Encryption Master Key/s to NOT Lose ##
+26026cea-29349736-09ffe649-50926800-
+    8c190b3c-832a44b9-515a910c-c8666537
